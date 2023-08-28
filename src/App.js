@@ -24,6 +24,9 @@ function App() {
         setList(data)
         setFilterList(data)
       })
+      console.log(window.location.href)
+
+
   }, [])
 
 
