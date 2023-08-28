@@ -73,7 +73,7 @@ function App() {
       <header className="App-header">
         <h2>Destiny Weapon Filter (Early Dev Stage)</h2>
         <div className='loginWrapper'>
-          <a href="https://www.bungie.net/en/oauth/authorize?client_id=44112&response_type=code&state=6i0mkLx79Hp91nzWVeHrzHG4&reauth=true">Log In</a>
+          <a href={`https://www.bungie.net/en/oauth/authorize?client_id=${REACT_APP_CLIENT_ID}&response_type=code&state=6i0mkLx79Hp91nzWVeHrzHG4&reauth=true`}>Log In</a>
         </div>
       </header>
       <main>
