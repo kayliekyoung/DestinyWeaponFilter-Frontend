@@ -77,7 +77,7 @@ function App() {
       <header className="App-header">
         <h2>Destiny Weapon Filter (Early Dev Stage)</h2>
         <div className='loginWrapper'>
-          <a href={`https://www.bungie.net/en/oauth/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&response_type=code&state=6i0mkLx79Hp91nzWVeHrzHG4&reauth=true`}>{
+          <a disabled={loggedIn} href={`https://www.bungie.net/en/oauth/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&response_type=code&state=6i0mkLx79Hp91nzWVeHrzHG4&reauth=true`}>{
             loggedIn ? "Logged In" : "Log In"
           }</a>
         </div>
