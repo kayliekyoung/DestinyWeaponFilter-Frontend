@@ -15,6 +15,7 @@ function App() {
   const [weaponTypeList, setWeaponType] = useState([]);
   const [elementList, setElement] = useState([]);
   const [filterList, setFilterList] = useState([])
+  const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
     fetch("https://destiny-weapon-filter-backend.vercel.app/filter")
@@ -25,7 +26,7 @@ function App() {
         setFilterList(data)
       })
       console.log(window.location.href)
-
+      window.location.href.includes("code=") && setLoggedIn(true);
 
   }, [])
 
@@ -76,7 +77,9 @@ function App() {
       <header className="App-header">
         <h2>Destiny Weapon Filter (Early Dev Stage)</h2>
         <div className='loginWrapper'>
-          <a href={`https://www.bungie.net/en/oauth/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&response_type=code&state=6i0mkLx79Hp91nzWVeHrzHG4&reauth=true`}>Log In</a>
+          <a href={`https://www.bungie.net/en/oauth/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&response_type=code&state=6i0mkLx79Hp91nzWVeHrzHG4&reauth=true`}>{
+            loggedIn ? "Log Out" : "Log In"
+          }</a>
         </div>
       </header>
       <main>
